@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Antispam From The Inside Out</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower-material/styles/screen-4x3.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Antispam From The Inside Out</h1>
+		<p>Mail.Ru Group - 26.03.2016 @ MIPT</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2>Antispam From The Inside Out</h2>
+		<p><span>Vadim Markovtsev, Post department / Antispam team</span><span class="push-right">26.03.2016 @ MIPT</span></p>
+		<img src="pictures/cover.jpg" alt="" class="cover">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#cover h2 {
+				margin:255px 0 0;
+				color:#FFF;
+				text-align:left;
+				font-size:50px;
+			}
+			#cover p {
+				margin:40px 0 0;
+				text-align:left;
+				color:#fff;
+				font-style:italic;
+				font-size:20px;
+			}
+			#cover p a {
+				color:#FFF;
+			}
+			.push-right {
+				float: right;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>View this on your device</h2>
+	</section>
+	<section class="slide">
+		<h2>Mail.Ru Post in numbers</h2>
+		<ul>
+			<li>80 000 000 active users monthly (30 000 000 daily)</li>
+			<li>1 000 000 registrations every day</li>
+			<li>500 000 000 emails (72 TB) every day</li>
+			<li>700 antispam servers</li>
+			<li>1 PB cluster for analytics, 2 PB logs storage</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Mail.Ru Antispam from technical point</h2>
+		<ul>
+			<li>OS: <a href="https://www.centos.org/">CentOS</a> (production),
+				<a href="https://en.wikipedia.org/wiki/OS_X">MacOSX</a> (analytics)</li>
+			<li>Database: <a href="http://tarantool.org/">Tarantool</a>,
+				<a href="https://www.mysql.com/">MySQL</a>,
+				<a href="https://memcached.org/">memcached</a></li>
+			<li>Analytics: <a href="http://hadoop.apache.org/">Hadoop</a>,
+				<a href="http://hbase.apache.org/">HBase</a>,
+				<a href="http://pig.apache.org/">Pig</a>,
+				<a href="http://gethue.com/">Hue</a></li>
+			<li>Monitoring: <a href="https://github.com/graphite-project/graphite-web">Graphite</a></li>
+			<li>Core: C++ engine + <a href="http://www.lua.org/">Lua</a> business logic</li>
+			<li>Services: <a href="https://www.python.org/">Python</a>, Lua, Java, Perl</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Analytical tasks</h2>
+		<ul>
+			<li>Filtering
+				<ul>
+					<li>Spam removal</li>
+					<li>Bots detection</li>
+				</ul>
+			</li>
+			<li>Security
+				<ul>
+					<li>Password anti-bruteforce</li>
+					<li>Break-in detection</li>
+				</ul>
+			</li>
+			<li>Product
+				<ul>
+					<li>Email insights</li>
+					<li>Smart helpers</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Operational tasks</h2>
+		<ul>
+			<li>Attack vectors
+				<ul>
+					<li>Reaction</li>
+					<li>Prediction</li>
+				</ul>
+			</li>
+			<li>Performance improvement
+				<ul>
+					<li>Profiling</li>
+					<li>Debugging</li>
+				</ul>
+			</li>
+			<li>Durability
+				<ul>
+					<li>Fail-safety arrangements</li>
+					<li>Refactoring</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Spam tradeoffs</h2>
+		<p class="double">how much spam is allowed <span class="vs">vs.</span> how comfortable
+		user is.
+		<img src="pictures/spam_policy.png" class="spam-xkcd center"/>
+		<span class="next">
+		system load <span class="vs">vs.</span> how well emails are analyzed.
+		<img src="pictures/performance_quality.png" class="spam-xkcd center"/>
+		</span>
+		<style>
+		.spam-xkcd {
+			width: 400px;
+			margin-top: 60px;
+		}
+		.vs {
+			color: red;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+			display: table;
+		}
+		</style>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Technologies</h2>
+	</section>
+	<section class="slide">
+		<h2>Machine Learning</h2>
+		<figure>
+			<blockquote>
+		    <p>A subfield of computer science[1] that evolved from the study of pattern recognition and computational learning theory in artificial intelligence.</p>
+				<figcaption><a href="https://en.wikipedia.org/wiki/Machine_learning">Wikipedia</a></figcaption>
+			</blockquote>
+		</figure
+		<p><br /><br />
+		In other words, real-life problems are stated as optimization problems (models)
+		which are subsequently solved by various methods (machine learning algorithms) on
+		computers without direct human participation.
+		</p>
+	</section>
+	<section class="slide">
+		<h2>Example: clustering</h2>
+		<img src="pictures/plot_cluster_comparison.png" class="center" style="
+		width: 820px;
+		margin-top: 50px;
+		"/>
+	</section>
+	<section class="slide">
+		<h2>Big Data?</h2>
+		<figure>
+			<blockquote>
+				<p>A term for data sets that are so large or complex that traditional data processing applications are inadequate.</p>
+			</blockquote>
+			<figcaption><a href="https://en.wikipedia.org/wiki/Big_data">Wikipedia</a></figcaption>
+		</figure>
+		<p>
+		<br />This may include:
+		<ul>
+			<li>Large datasets which do not fit into 1 computer</li>
+			<li>Large data streams which cannot be stored on disk</li>
+			<li>Need for high algorithmic parallelism</li>
+		</ul>
+	</p>
+	</section>
+	<section class="slide">
+		<h2>Big Data?</h2>
+	  <p>Most of the everyday problems
+			<a href="https://habrahabr.ru/company/mlclass/blog/258475/">are <em>not</em></a> big data.</p>
+		<img src="pictures/meme.jpg" class="center" style="height: 400px;" />
+	</section>
+	<section class="slide">
+		<h2>Big Data &amp; Machine Learning</h2>
+		<img src="pictures/xkcd.png" class="center" style="
+		height: 380px;
+		margin-top: 80px;
+		">
+	</section>
+	<section class="slide">
+		<h2>Hadoop stack</h2>
+		<a href="https://en.wikipedia.org/wiki/Apache_Hadoop">HDFS + YARN</a>,
+		<a href="https://ru.wikipedia.org/wiki/MapReduce">MapReduce</a>,
+		<a href="https://en.wikipedia.org/wiki/Pig_(programming_tool)">Pig</a>,
+		<a href="https://en.wikipedia.org/wiki/Hue_(Hadoop)">Hue</a>
+		<p class="double">
+			<img src="pictures/pyramid.png" class="center" style="
+			margin-top: 40px;
+			"/>
+			<img src="pictures/piglatin.png" id="piglatin"/>
+			<style>
+			#piglatin {
+				margin-left: -20px;
+				margin-top: 50px;
+			}
+			</style>
+		</p>
+	</section>
+	<section class="slide">
+		<h2>Highload challenges</h2>
+		<ul>
+			<li>Extreme parallelism. Each mutex is counted.</li>
+			<li>Extreme storage requirements: solved by <a href="http://tarantool.org/">Tarantool</a></li>
+			<li>Tiniest memory leak becomes a disaster.
+				<ul>
+					<li>valgrind is not an option sometimes</li>
+					<li>tcmalloc heap profiling</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>MapReduce</h2>
+		<img src="pictures/mapreduce.png" class="center" style="
+		width: 700px;
+		">
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Examples</h2>
+	</section>
+	<section class="slide">
+		<h2>Bots ("autoregs")</h2>
+		<ol>
+			<li>...</li>
+		</ol>
+		Conclusion: Logistic Regression is cool. Why?
+	</section>
+	<section class="slide">
+		<h2>Anti-bruteforce</h2>
+		<ol>
+			<li>...</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Break-ins</h2>
+		<ol>
+			<li>Marshal</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Finally</h2>
+	</section>
+	<section class="slide">
+		<h2>I want to study machine learning</h2>
+		<ol>
+			<li>Marshal</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>I want to code Big Data</h2>
+		<ol>
+			<li>Marshal</li>
+		</ol>
+	</section>
+
+
+	<section class="slide">
+		<h2>Code samples</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code class="mark">&lt;html lang="en"&gt;</code>
+			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
+			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Even tables</h2>
+		<table>
+		<tr>
+			<th scope="col">Locavore</th>
+			<th>Umami</th>
+			<th>Helvetica</th>
+			<th>Vegan</th>
+		</tr>
+		<tr>
+			<th scope="row">Fingerstache</th>
+			<td>Kale</td>
+			<td>Chips</td>
+			<td>Keytar</td>
+		</tr>
+		<tr>
+			<th scope="row">Sriracha</th>
+			<td>Gluten-free</td>
+			<td>Ennui</td>
+			<td>Keffiyeh</td>
+		</tr>
+		<tr>
+			<th scope="row">Thundercats</th>
+			<td>Jean</td>
+			<td>Shorts</td>
+			<td>Biodiesel</td>
+		</tr>
+		<tr>
+			<th scope="row">Terry</th>
+			<td>Richardson</td>
+			<td>Swag</td>
+			<td>Blog</td>
+		</tr>
+		</table>
+		<p>It’s good to have information organized.</p>
+	</section>
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>
