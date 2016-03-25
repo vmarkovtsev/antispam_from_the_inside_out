@@ -44,6 +44,14 @@
 	</section>
 	<section class="slide">
 		<h2>View this on your device</h2>
+		<a href="http://goo.gl/5x4FzW" style="
+		text-align: center;
+		font-size: 50px;
+		text-decoration: none;
+		background: none;
+		display: block;
+		">goo.gl/5x4FzW</a>
+		<img src="pictures/qrcode.png" class="center"/>
 	</section>
 	<section class="slide">
 		<h2>Mail.Ru Post in numbers</h2>
@@ -216,111 +224,135 @@
 		</p>
 	</section>
 	<section class="slide">
-		<h2>Highload challenges</h2>
-		<ul>
-			<li>Extreme parallelism. Each mutex is counted.</li>
-			<li>Extreme storage requirements: solved by <a href="http://tarantool.org/">Tarantool</a></li>
-			<li>Tiniest memory leak becomes a disaster.
-				<ul>
-					<li>valgrind is not an option sometimes</li>
-					<li>tcmalloc heap profiling</li>
-				</ul>
-			</li>
-		</ul>
-	</section>
-	<section class="slide">
 		<h2>MapReduce</h2>
 		<img src="pictures/mapreduce.png" class="center" style="
 		width: 700px;
 		">
 	</section>
 	<section class="slide">
+		<h2>IPython</h2>
+		<iframe width="100%" height="480px" frameborder="0" scrolling="no"
+		marginheight="0" marginwidth="0" seamless="" src="https://nature.tmpnb.org"
+		id="ipython">
+	  </iframe>
+	</section>
+	<section class="slide">
+		<h2>Highload challenges</h2>
+		<ul>
+			<li>Extreme parallelism. Each mutex is counted.
+				<a href="https://en.wikipedia.org/wiki/Epoll">epoll</a> is essential.</li>
+			<li>Extreme storage requirements: solved by <a href="https://habrahabr.ru/company/mailru/blog/273695/">Tarantool</a></li>
+			<li>Tiniest memory leak becomes a disaster
+				<ul>
+					<li><a href="http://valgrind.org/">valgrind</a>'s massif is not an option sometimes</li>
+					<li><a href="http://goog-perftools.sourceforge.net/doc/tcmalloc.html">tcmalloc</a> heap profiling</li>
+				</ul>
+			</li>
+			<li><a href="http://exceptionsafecode.com/">C++ exception safety.</a></li>
+			<li>BL engine must be as fast as possible - <a href="http://luajit.org/">LuaJIT</a></li>
+			<li>Logging is hard. There is a special infrastructure based on
+				<a href="https://github.com/graphite-project/graphite-web">Graphite</a>.</li>
+		</ul>
+	</section>
+	<section class="slide">
 		<h2 class="shout shrink">Examples</h2>
 	</section>
 	<section class="slide">
 		<h2>Bots ("autoregs")</h2>
-		<ol>
-			<li>...</li>
-		</ol>
-		Conclusion: Logistic Regression is cool. Why?
+		<ul>
+			<li>Classify Post registrations either as "normal" or "bot"</li>
+			<li>Problems:
+				<ul>
+					<li>Noisy unbalanced dataset</li>
+					<li>Variety of signatures</li>
+				</ul>
+			</li>
+			<li>Features:
+				<ul>
+					<li>Lexical</li>
+					<li>Geolocational</li>
+					<li>Metadata</li>
+					<li>Other</li>
+				</ul>
+			</li>
+			<li>Implementation: Python, Lua</li>
+		</ul>
 	</section>
 	<section class="slide">
-		<h2>Anti-bruteforce</h2>
+		<h2>Autoregs - algorithm</h2>
 		<ol>
-			<li>...</li>
+			<li>Merge different data streams</li>
+			<li>Cluster (modified s-means, similar to
+				<a href="https://en.wikipedia.org/wiki/DBSCAN">DBSCAN</a>)</li>
+			<li>Classify (<a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a>)</li>
+			<li>Apply negative reinforcement</li>
+			<li>Merge with the previous state</li>
+			<li>Back by humans</li>
 		</ol>
+	</section>
+	<section class="slide">
+		<h2>Sender reputation</h2>
+		<ul>
+			<li>Forecast the spam reports number</li>
+			<li>Based on sender classification and typical behavior patterns</li>
+			<li>Depends on the context, e.g. time and date</li>
+			<li>Implementation: Python, Lua</li>
+		</ul>
 	</section>
 	<section class="slide">
 		<h2>Break-ins</h2>
-		<ol>
-			<li>Marshal</li>
-		</ol>
+		<ul>
+			<li>Detect account hijacking</li>
+			<li>Based on comparison of user's actions with the collected profile</li>
+			<li>Features:
+				<ul>
+					<li>UI actions</li>
+					<li>Used devices</li>
+					<li>Geolocational</li>
+				</ul>
+			</li>
+			<li>Implementation: Pig, Python</li>
+		</ul>
 	</section>
-
+	<section class="slide">
+		<h2>Break-ins</h2>
+		<iframe src="https://www.slideshare.net/slideshow/embed_code/59880028"
+		width="595" height="485" frameborder="0" marginwidth="0" marginheight="0"
+		scrolling="no" style="border:1px solid #CCC;
+		border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen class="center"> </iframe>
+	</section>
+	<section class="slide">
+		<h2>Secret projects</h2>
+		<ul>
+			<li>Anti-bruteforce</li>
+			<li>Fraud spam detection</li>
+			<li>First line support helper</li>
+			<li>Many, maaany more</li>
+		</ul>
+	</section>
 	<section class="slide">
 		<h2 class="shout shrink">Finally</h2>
 	</section>
 	<section class="slide">
-		<h2>I want to study machine learning</h2>
+		<h2>I want to do machine learning</h2>
 		<ol>
-			<li>Marshal</li>
+			<li>Study theory: <a href="https://www.coursera.org/learn/introduction-machine-learning">Coursera</a></li>
+			<li>Study Python: <a href="http://scikit-learn.org/stable/">sklearn</a></li>
+			<li>Take part in
+				<a href="https://www.hackerrank.com/domains/ai/machine-learning/difficulty/all/page/2">HackerRank</a>
+				and <a href="https://www.kaggle.com/competitions">Kaggle</a> challenges</li>
 		</ol>
 	</section>
 	<section class="slide">
-		<h2>I want to code Big Data</h2>
+		<h2>I want to code Big Data solutions</h2>
 		<ol>
-			<li>Marshal</li>
+			<li>Strong C++ is a must</li>
+			<li>Study Hadoop projects</li>
+			<li>Gain experience in a relevant company</li>
 		</ol>
 	</section>
-
-
 	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2 class="shout shrink">Thanks<br />goo.gl/5x4FzW</h2>
 	</section>
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
