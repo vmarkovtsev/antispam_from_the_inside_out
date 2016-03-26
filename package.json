@@ -1,15 +1,15 @@
 {
-  "name": "shower",
-  "description": "Shower HTML presentation engine",
-  "version": "2.0.8",
+  "name": "AntispamMIPTPresentation",
+  "description": "Presentation based on Shower HTML presentation engine",
+  "version": "1.0.0",
   "author": {
-    "name": "Vadim Makeev",
-    "url": "http://pepelsbey.net/"
+    "name": "Vadim Markovtsev",
+    "url": "http://corp.mail.ru"
   },
-  "homepage": "https://github.com/shower/shower",
+  "homepage": "https://github.com/vmarkovtsev/antispam_from_the_inside_out",
   "repository": {
     "type": "git",
-    "url": "git://github.com/shower/shower.git"
+    "url": "git://github.com/vmarkovtsev/antispam_from_the_inside_out.git"
   },
   "scripts": {
     "grunt": "grunt",
@@ -25,9 +25,7 @@
     "template"
   ],
   "dependencies": {
-    "shower-core": "^2.0.5",
-    "shower-material": "^1.0.3",
-    "shower-ribbon": "^2.0.3"
+    "shower-core": "^2.0.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
